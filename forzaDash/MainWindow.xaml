@@ -1,0 +1,43 @@
+﻿<Window x:Class="forzaDash.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Racing Dashboard" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- RPM -->
+        <Label Grid.Row="0" Grid.Column="0" Content="RPM:" Margin="5" VerticalAlignment="Center" x:Name="LabelRPM"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" IsReadOnly="True" Text="{Binding RPM, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 AutomationProperties.Name="RPM" AutomationProperties.LabeledBy="{Binding ElementName=LabelRPM}"/>
+
+        <!-- Tire Temperature -->
+        <Label Grid.Row="1" Grid.Column="0" Content="Tire Temperature:" Margin="5" VerticalAlignment="Center" x:Name="LabelTireTemp"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" IsReadOnly="True" Text="{Binding TireTemperature, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
+                 AutomationProperties.Name="Tire Temperature" AutomationProperties.LabeledBy="{Binding ElementName=LabelTireTemp}"/>
+
+        <!-- Speed -->
+        <Label Grid.Row="2" Grid.Column="0" Content="Speed:" Margin="5" VerticalAlignment="Center" x:Name="LabelSpeed"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" IsReadOnly="True" Text="{Binding Speed}"
+                 AutomationProperties.Name="Speed" AutomationProperties.LabeledBy="{Binding ElementName=LabelSpeed}"/>
+
+        <!-- Lap Number -->
+        <Label Grid.Row="3" Grid.Column="0" Content="Lap Number:" Margin="5" VerticalAlignment="Center" x:Name="LabelLapNumber"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" IsReadOnly="True" Text="{Binding LapNumber}"
+                 AutomationProperties.Name="Lap Number" AutomationProperties.LabeledBy="{Binding ElementName=LabelLapNumber}"/>
+
+        <!-- Position -->
+        <Label Grid.Row="4" Grid.Column="0" Content="Position:" Margin="5" VerticalAlignment="Center" x:Name="LabelPosition"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" IsReadOnly="True" Text="{Binding Position}"
+                 AutomationProperties.Name="Position" AutomationProperties.LabeledBy="{Binding ElementName=LabelPosition}"/>
+    </Grid>
+</Window>
